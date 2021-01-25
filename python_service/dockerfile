@@ -1,0 +1,8 @@
+FROM python:3.9-alpine
+
+COPY requirements.txt /usr/src/app/python-api/requirements.txt
+WORKDIR /usr/src/app/python-api/
+RUN pip install -r requirements.txt
+
+COPY . /usr/src/app/python-api/
+CMD ["python3", "api.py"]
